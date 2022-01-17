@@ -57,8 +57,8 @@ main .left h2 {
 
 @media (min-width: 1024px) {
   main .left h2 {
-    -webkit-transform: translateX(-120px);
-            transform: translateX(-120px);
+    -webkit-transform: translateX(-140px);
+            transform: translateX(-140px);
   }
 }
 
@@ -94,17 +94,17 @@ main .left .left-content {
 
 main .left .left-content h1 {
   color: #02073e;
-  width: 50%;
+  width: 30%;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 50px;
+  font-size: 24px;
+  line-height: 35px;
   margin: 0;
 }
 
 main .left .left-content p {
   margin: 0;
   line-height: 25px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 main .left .left-content .form {
@@ -113,19 +113,38 @@ main .left .left-content .form {
 
 @media (min-width: 1024px) {
   main .left .left-content .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
   }
 }
 
 main .left .left-content .form input {
   display: block;
-  padding: 18px;
+  padding: 16px;
   background: #e7e7e7;
   width: 100%;
   border-radius: 20px;
   margin: 10px 0;
   font-size: 18px;
   border: none;
+}
+
+@media (min-width: 1024px) {
+  main .left .left-content .form input {
+    display: inline;
+    width: 36%;
+  }
+}
+
+main .left .left-content .form input[type="email"] {
+  width: 62%;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
 }
 
 main .left .left-content .form input:focus {
@@ -147,9 +166,9 @@ main .left .left-content .form button {
 @media (min-width: 1024px) {
   main .left .left-content .form button {
     position: absolute;
-    padding: 18px;
-    width: 30%;
-    top: 67px;
+    padding: 16px;
+    width: 23%;
+    top: 10px;
     right: -3px;
     border-radius: 0 20px 20px 0;
   }
@@ -243,8 +262,8 @@ main .right .counter h1 {
   border: 8px solid;
   border-radius: 50%;
   padding: 10px;
-  width: 90px;
-  height: 90px;
+  width: 108px;
+  height: 108px;
   font-size: 18px;
 }
 
