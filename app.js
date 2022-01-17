@@ -1,6 +1,6 @@
 const [name, email] = document.querySelectorAll("input");
 const btn = document.querySelector("button");
-url = "https://api.zerodepression.org/v1/ge/newsletter";
+url = "https://api.zerodepression.com/v1/ge/newsletter";
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   let formData = Object.create(null);
@@ -16,8 +16,25 @@ btn.addEventListener("click", (e) => {
   //     body: JSON.stringify(formData),
   //   })
   //     .then((res) => res.json())
-  //     .then((data) => console.log(data.message))
+  //     .then((data) => {
+  //         console.log(data.message);
+  //         name.value = "";
+  //         email.value = ""
+  //     })
   //     .catch((err) => console.error(err));
+  const body = JSON.stringify(formData);
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  xhr.send(body);
+  xhr.onload = function () {
+    if (xhr.status != 200) {
+      console.log("Error" + xhr.status);
+      return;
+    }
+  };
 });
 
 const [days, hours, mins, secs] = document.querySelectorAll(".right span");
@@ -40,8 +57,6 @@ function countDown() {
     clearInterval(counter);
     return;
   }
-
-
 
   days.textContent = formatTime(remainingDays);
   hours.textContent = formatTime(remainingHours);
