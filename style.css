@@ -141,10 +141,12 @@ main .left .left-content .form input {
   }
 }
 
-main .left .left-content .form input[type="email"] {
-  width: 62%;
-  -webkit-transform: translateX(10px);
-          transform: translateX(10px);
+@media (min-width: 1024px) {
+  main .left .left-content .form input[type="email"] {
+    width: 62%;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
 }
 
 main .left .left-content .form input:focus {
@@ -256,14 +258,27 @@ main .right .counter {
 main .right .counter h1 {
   color: white;
   font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   position: relative;
   margin: 10px;
   border: 8px solid;
   border-radius: 50%;
   padding: 10px;
-  width: 108px;
-  height: 108px;
+  width: 128px;
+  height: 128px;
   font-size: 18px;
 }
 
@@ -271,8 +286,6 @@ main .right .counter h1 {
   main .right .counter h1 {
     margin: 0 10px;
     top: 40vh;
-    width: 128px;
-    height: 128px;
   }
 }
 
